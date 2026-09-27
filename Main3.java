@@ -23,7 +23,7 @@ class Student {
     }
 }
 
-// Lớp Classroom có tên lớp và danh sách sinh viên
+
 class Classroom {
     private String tenLop;
     private ArrayList<Student> danhSach;
@@ -33,7 +33,7 @@ class Classroom {
         this.danhSach = new ArrayList<>();
     }
 
-    // Phương thức từ chối thêm nếu mssv đã tồn tại
+    
     public void addStudent(Student s) {
         for (Student student : danhSach) {
             if (student.getMssv().equals(s.getMssv())) {
@@ -43,7 +43,7 @@ class Classroom {
         danhSach.add(s);
     }
 
-    // Phương thức xếp loại dựa trên điểm trung bình
+    
     public String xepLoai(Student s) {
         double dtb = s.diemTrungBinh();
         if (dtb >= 8.0) return "Giỏi";
@@ -52,7 +52,7 @@ class Classroom {
         return "Yếu";
     }
 
-    // Phương thức in bảng điểm và sĩ số
+    
     public void inBangDiem() {
         System.out.println("--- BẢNG ĐIỂM LỚP " + tenLop + " ---");
         for (Student s : danhSach) {
@@ -71,7 +71,7 @@ public class Main3 {
         Student sv2 = new Student("SV002", "Trần Thị B", 10.0, 9.0, 9.5);   // ĐTB: 9.4 (Giỏi)
         Student sv3 = new Student("SV003", "Lê Văn C", 4.0, 5.0, 4.5);      // ĐTB: 4.6 (Yếu)
 
-        // Sinh viên này cố tình để trùng MSSV với sv1
+        
         Student sv4 = new Student("SV001", "Kẻ Mạo Danh", 10.0, 10.0, 10.0);
 
         // Thêm các sinh viên hợp lệ
@@ -79,7 +79,7 @@ public class Main3 {
         myClass.addStudent(sv2);
         myClass.addStudent(sv3);
 
-        // Thử thêm sinh viên có MSSV trùng và bắt lỗi bằng try-catch
+        
         System.out.println("--- THỬ THÊM SINH VIÊN TRÙNG MSSV ---");
         try {
             myClass.addStudent(sv4);
